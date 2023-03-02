@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Resize Memcache Pool Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<html>
+    <body>
+    {% include "nav_bar.html" %}
+        <div class="formContainer" style="height: 45vmin; width: 65vmin;">
+            <div class = 'button-group' style="margin-top: 0">
+                <a href="{{ url_for('manual_form') }}">
+                    <button type="button" style="background-color: #9a9ca5;">Manual Scaler Options</button>
+                </a>
+                <a href="{{ url_for('automatic_form') }}">
+                    <button type="button" style="background-color: #797a75;">Automatic Scaler Options</button>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

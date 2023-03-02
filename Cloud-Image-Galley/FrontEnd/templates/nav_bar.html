@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <title>Nav Bar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<html>
+    <body>
+    <div class="navbar navbar-expand-lg sticky-top navbar-dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div class = "logoTitle-header">
+                        <a href="/">
+                            <img src="../static/CloudLogo.svg" style="width:105%; height: auto" alt="Logo">
+                        </a>
+                        <a href="/" style="text-decoration: none">
+                            <h1 class="title-header"><span class="letter-header">C</span>loud
+                                <span class="letter-header">I</span>mage
+                                <span class="letter-header">G</span>allery
+                            </h1>
+                        </a>
+                    </div>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('listKeys') }}">Browse Keys</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('upload_form') }}">Upload</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('retrieve_key_form') }}">Browse Image</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

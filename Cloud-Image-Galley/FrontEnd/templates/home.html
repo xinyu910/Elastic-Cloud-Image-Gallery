@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>Cloud Image Gallery - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<html>
+    <body>
+        <div class = "wraper">
+        <div class = "logoTitle">
+            <a href="{{ url_for('home') }}">
+                <img src="../static/CloudLogo.svg" style="width:130%; height: auto" alt="Logo">
+              </a>
+            <a href="{{ url_for('home') }}" style="text-decoration: none">
+                <h1 class="title"><span class="letter">C</span>loud
+                    <span class="letter">I</span>mage
+                    <span class="letter">G</span>allery</h1>
+            </a>
+        </div>
+        <div class = 'container'>
+            <div class = 'button-group' style="margin-top: 20vmin">
+                <a href="{{ url_for('listKeys') }}">
+                    <button type="button" style="background-color: #819FA6;">View Existing Keys</button>
+                </a>
+                <a href="{{ url_for('upload_form') }}">
+                    <button type="button" style="background-color: #C68B4F;">Upload New Image</button>
+                </a>
+                <a href="{{ url_for('retrieve_key_form') }}">
+                    <button type="button" style="background-color: #B4A394;">Browse Image by Key</button>
+                </a>
+                </a>
+                <h2 class="link"><a href="/manager/home" style="color: inherit; text-decoration: inherit"><u>Link to Manger Interface</u></a></h2>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>Upload Image Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<html>
+    <body>
+     {% include "nav_bar.html" %}
+        <div class="formContainer">
+            <form action="{{ url_for('upload')}}" method="post" enctype="multipart/form-data">
+                <label for="key" class="form-label">Key</label>
+                <input type="text" name="key" id="key" class="form-control" required/>
+                <div id ="upload">
+                    <label for="file" class="form-label">Choose your image</label>
+                    <input class="form-control p-2" name = 'file' id="file" type="file" accept="image/*" required>
+                </div>
+                <div style="text-align: center">
+                    <button type="submit" value="get" class="form-button" style="background-color: #C68B4F">Upload Image</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <title>Resize Memcache Pool -- Manual</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+    <script type="text/javascript">
+        function expand(num) {
+           let a = document.getElementById("size");
+           let value = a.value;
+           var number = parseInt(num) - 1;
+           if (value < 8 && (value === num || parseInt(value) === number)) {
+               value++;
+               a.value = value;
+           }
+        }
+
+        function shrink(num) {
+            let a = document.getElementById("size");
+            let value = a.value;
+            var number = parseInt(num) + 1;
+            if (value > 1 && (value === num || parseInt(value) === number)) {
+                value--;
+                a.value = value;
+            }
+        }
+    </script>
+</head>
+<html>
+    <body>
+        {% include "nav_bar.html" %}
+        <div class="formContainer" style="height: 55vmin; width: 65vmin;">
+        <form action="{{ url_for('manual_resize')}}" method="post">
+            <label for="size" class="form-label">Number of Nodes</label>
+            <p style="font-size: 1.5vmin">Can Only shrink or expand node by 1</p>
+            <input type="number" step = '1' min = '1' max = '8' id="size" value={{ numOfNode }} name="size" style="height: 5.7vmin;
+        width: 20vmin;" class="form-control" required readonly/>
+            <div style="text-align: left">
+                <button type="button" class="form-button" onclick="expand('{{ numOfNode }}')" style="background-color: #9fa07f; width: 15vmin;
+        height: 5.5vmin; font-size: 2.4vmin;">Expand</button>
+            </div>
+            <div style="text-align: left">
+                <button type="button" class="form-button" onclick="shrink('{{ numOfNode }}')" style="background-color: #9fa07f; width: 15vmin;
+        height: 5.5vmin; font-size: 2.4vmin;">Shrink</button>
+            </div>
+            <div style="text-align: center">
+                <button type="submit" value="submit" class="form-button">Submit New Size</button>
+            </div>
+        </form>
+        </div>
+    </body>
+</html>

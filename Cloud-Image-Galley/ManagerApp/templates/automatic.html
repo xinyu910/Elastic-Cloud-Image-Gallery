@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Resize Memcache Pool -- Automatic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<html>
+    <body>
+        {% include "nav_bar.html" %}
+        <div class="formContainer" style="height: 68vmin; width: 68vmin; margin-top: 10vmin">
+        <form action="{{ url_for('automatic_resize')}}" method="post">
+            <label for="MaxThreshold" class="form-label" style="font-size: 2.8vmin;">Max Miss Rate threshold</label>
+            <input type="number" step="any" min="0.0" name="MaxThreshold" id="MaxThreshold" class="form-control" required/>
+            <label for="MinThreshold" class="form-label" style="font-size: 2.8vmin;">Min Miss Rate threshold</label>
+            <input type="number" step="any" min="0.0" name="MinThreshold" id="MinThreshold" class="form-control" required/>
+            <label for="ExpandRatio" class="form-label" style="font-size: 2.8vmin;">Expand Ratio</label>
+            <input type="number" step="any" min="1.0" name="ExpandRatio" id="ExpandRatio" class="form-control" required/>
+            <label for="ShrinkRatio" class="form-label" style="font-size: 2.8vmin;">Shrink Ratio</label>
+            <input type="number" step="any" max="1.0" min="0.0" name="ShrinkRatio" id="ShrinkRatio" class="form-control" required/>
+            <div style="text-align: center">
+                <button type="submit" value="get" class="form-button" style="background-color: #a0805e">Submit Change</button>
+            </div>
+        </form>
+        </div>
+    </body>
+</html>
