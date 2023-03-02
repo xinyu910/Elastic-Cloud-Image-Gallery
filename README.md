@@ -9,7 +9,7 @@ The project consists of 4 flask instances deployed in one EC2 instance: Frontend
 ##### Rahavi Selvarajan:
 * Autoscaler and EC2 memcache class, Cloudwatch integration and memcache statistics, Performance testing
 ##### Farhan Rahman:
-Manual Scaling and Consistent MD5 hashing. Debugging Autoscaler and Performance testing
+* Manual Scaling and Consistent MD5 hashing. Debugging Autoscaler and Performance testing
 
 
 
